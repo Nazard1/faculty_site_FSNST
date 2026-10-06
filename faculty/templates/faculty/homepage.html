@@ -1,0 +1,21 @@
+{% extends "faculty/base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+    {% if homepage %}
+        <article>
+            <h1>{{ homepage.title }}</h1>
+            <p>{{ homepage.content|linebreaks }}</p>
+        </article>
+
+        {% if homepage.contacts %}
+            <article>
+                <h2>Контакти</h2>
+                <p>{{ homepage.contacts|linebreaksbr }}</p>
+            </article>
+        {% endif %}
+    {% else %}
+        <p>Інформація ще не додана. Додайте запис «Home pages» в адмінці.</p>
+    {% endif %}
+{% endblock %}
